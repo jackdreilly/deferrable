@@ -1,6 +1,6 @@
 name: deferrable
 description: Defer cleanup operations to the `dispose` method of a StatefulWidget
-version: 1.0.0+3
+version: 1.0.1
 homepage: https://github.com/jackdreilly/deferrable
 repository: https://github.com/jackdreilly/deferrable
 
