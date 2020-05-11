@@ -5,6 +5,11 @@ mixin Deferrable<T extends StatefulWidget> on State<T> {
   final _deferreds = <Function>[];
   void defer(Function f) => _deferreds.add(f);
   bool get isDisposed => _isDisposed;
+  bool get blockSetStateAfterDispose => false;
+
+  @override
+  void setState(Function() fn) =>
+      (isDisposed && blockSetStateAfterDispose) ? null : super.setState(fn);
 
   @override
   void dispose() {
